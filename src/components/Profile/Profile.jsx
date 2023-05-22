@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Profile.module.css';
 
 export const Profile = ({
@@ -8,28 +9,40 @@ export const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div class={css.profile}>
-      <div class={css.description}>
-        <img src={avatar} alt={username} class={css.avatar} />
-        <p class={css.username}>{username}</p>
-        <p class={css.tag}>@{tag}</p>
-        <p class={css.location}>{location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={avatar} alt={username} className={css.avatar} />
+        <p className={css.username}>{username}</p>
+        <p className={css.tag}>@{tag}</p>
+        <p className={css.location}>{location}</p>
       </div>
 
-      <ul class={css.stats}>
-        <li class={css.item}>
-          <span class={css.label}>Followers</span>
-          <span class={css.quantity}>{followers}</span>
+      <ul className={css.stats}>
+        <li className={css.item}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
-        <li class={css.item}>
-          <span class={css.label}>Views</span>
-          <span class={css.quantity}>{views}</span>
+        <li className={css.item}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{views}</span>
         </li>
-        <li class={css.item}>
-          <span class={css.label}>Likes</span>
-          <span class={css.quantity}>{likes}</span>
+        <li className={css.item}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </div>
   );
+};
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
 };
