@@ -1,5 +1,5 @@
-import { Profile } from './profile/Profile.jsx';
-import { Statistics } from './statistics/Statistics.jsx';
+import { Profile } from './Profile/Profile.jsx';
+import { Statistics } from './Statistics/Statistics.jsx';
 import { FriendList } from './friendList/FriendList.jsx';
 import { TransactionHistory } from './transactionHistory/TransactionHistory.jsx';
 
